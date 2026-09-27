@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal portfolio — Every Little Life Deserves a Guardian. Wildlife and conservation medicine applicant.">
+<title>Every Little Life Deserves a Guardian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--amber:#E8A268;--clay:#C97B5A;--cream:#FAF6F0;--cream2:#F3EADB;--sage:#8FA98F;--ink:#3E3A36;--ink-soft:#6b6157;--white:#FFFDF9;--radius:16px;--shadow:0 10px 30px rgba(62,58,54,.12);--font-title:"Fraunces",Georgia,serif;--font-body:"Nunito Sans",Inter,system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-title);line-height:1.15;font-weight:500}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--clay);color:#fff;padding:.5rem 1rem;z-index:999}.skip:focus{left:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 28px;transition:background .3s,box-shadow .3s,padding .3s;background:transparent;color:#fff}
+.site-header.scrolled{background:rgba(250,246,240,.82);backdrop-filter:blur(12px);color:var(--ink);box-shadow:0 4px 20px rgba(62,58,54,.08);padding:12px 28px}
+.brand{font-family:var(--font-title);font-size:1.25rem;font-weight:600}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{font-weight:600;font-size:.98rem;opacity:.85;position:relative;padding:4px 0}
+.nav a:hover{opacity:1}
+.nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--amber);border-radius:2px}
+.nav-toggle{display:none;background:none;border:none;color:inherit;font-size:1.6rem;cursor:pointer;line-height:1}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;color:#fff}
+.hero-media{position:absolute;inset:0;background-size:cover;background-position:center;animation:kenburns 20s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.05)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(62,46,34,.78),rgba(62,46,34,.35) 55%,rgba(62,46,34,.1))}
+.hero-content{position:relative;max-width:640px;padding:0 24px;margin-left:4vw}
+.eyebrow{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;font-weight:700}
+.hero h1{font-size:clamp(2.6rem,6vw,4.5rem);margin-bottom:20px}
+.hero .sub{font-size:clamp(1.05rem,2vw,1.3rem);opacity:.92;margin-bottom:34px;max-width:30em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;font-size:1rem;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--clay);color:#fff}
+.btn-ghost{border:2px solid rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#fff;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;opacity:.85;animation:float 2s ease-in-out infinite;text-align:center}
+.scroll-hint::before{content:"";display:block;width:1px;height:34px;background:#fff;margin:0 auto 8px}
+@keyframes float{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
+section{padding:110px 0;scroll-margin-top:70px}
+.section-title{font-size:clamp(2rem,4vw,3rem);margin-bottom:12px}
+.section-lead{color:var(--clay);font-style:italic;font-family:var(--font-title);font-size:1.25rem;margin-bottom:38px}
+.story{background:var(--cream)}
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:30px}
+.story-grid article{background:var(--white);padding:34px 30px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.story-grid .num{font-family:var(--font-title);font-size:.9rem;color:var(--sage);letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
+.story-grid h3{font-size:1.5rem;margin-bottom:14px}
+.story-intro{max-width:720px;margin:10px auto 40px;text-align:center;font-size:1.1rem;color:var(--ink-soft)}
+.story-why{margin-top:40px;padding:34px 30px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow)}
+.story-why h3{font-size:1.5rem;margin-bottom:12px}
+.photography{background:var(--cream2)}
+.travel{background:var(--cream)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.filter{border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:9px 18px;border-radius:999px;font-weight:700;font-size:.92rem;cursor:pointer;transition:all .2s}
+.filter:hover{border-color:var(--clay);color:var(--clay)}
+.filter.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.card{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;background:var(--white)}
+.card img{width:100%;height:280px;object-fit:cover;transition:transform .5s}
+.card:hover img{transform:scale(1.05)}
+.card .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;color:#fff;font-size:.95rem;background:linear-gradient(transparent,rgba(62,46,34,.85))}
+.card .tag{position:absolute;top:12px;left:12px;background:rgba(62,58,54,.7);color:#fff;font-size:.72rem;padding:4px 10px;border-radius:999px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.card.hidden{display:none}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(30,26,22,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:40px 20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(92vw,1000px);max-height:78vh;border-radius:12px;object-fit:contain}
+.lightbox .lb-cap{color:#fff;margin-top:16px;font-size:1rem;text-align:center;max-width:700px}
+.lightbox .lb-close{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:2.2rem;cursor:pointer}
+.lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:2.4rem;cursor:pointer;padding:10px;opacity:.8}
+.lightbox .lb-nav:hover{opacity:1}
+.lb-prev{left:12px}.lb-next{right:12px}
+.contact{background:var(--cream);text-align:center}
+.contact .mail{font-size:1.4rem;font-weight:700;color:var(--clay);margin:18px 0 30px;display:inline-block}
+.closing{font-family:var(--font-title);font-style:italic;font-size:1.3rem;color:var(--ink-soft);margin-top:26px}
+footer{padding:30px 24px;text-align:center;color:var(--ink-soft);font-size:.9rem}
+.to-top{position:fixed;right:24px;bottom:24px;z-index:40;width:46px;height:46px;border-radius:50%;background:var(--clay);color:#fff;border:none;font-size:1.3rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;box-shadow:var(--shadow)}
+.to-top.visible{opacity:1;pointer-events:auto}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:820px){
+.story-grid{grid-template-columns:1fr}
+.nav{position:absolute;top:100%;right:0;left:0;flex-direction:column;gap:0;align-items:stretch;background:rgba(250,246,240,.97);color:var(--ink);display:none;padding:10px 0;box-shadow:0 12px 24px rgba(62,58,54,.12)}
+.nav.open{display:flex}
+.nav a{padding:14px 28px}
+.nav-toggle{display:block}
+.hero{justify-content:center;text-align:center}
+.hero-content{margin-left:0}
+.hero-cta{justify-content:center}
+.hero-overlay{background:linear-gradient(180deg,rgba(62,46,34,.7),rgba(62,46,34,.4))}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#story">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#top">杨卓毅</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav class="nav" id="nav">
+    <a href="#story" class="nav-link">Story</a>
+    <a href="#photography" class="nav-link">Record</a>
+    <a href="#travel" class="nav-link">Travel</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-media" role="img" aria-label="A small animal I met and photographed on the street" style="background-image:url('8ff17728f66f8c623d268a8f26732fff.jpg');background-position:58% 32%"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Wildlife &amp; Conservation Medicine · Applicant Portfolio</p>
+    <h1>Every Little Life Deserves a Guardian</h1>
+    <p class="sub">Documenting and protecting small lives — on my way to veterinary medicine.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#story">View My Story</a>
+      <a class="btn btn-ghost" href="#photography">See the Photographs</a>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#story">Scroll</a>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <h2 class="section-title reveal">Story</h2>
+    <p class="section-lead reveal">From a lens, to small actions, to medicine.</p>
+    <p class="story-intro reveal">I picked up a camera before I knew where the path would lead. Noticing the stray cats in my neighborhood, I started paying attention to small lives that most people walk past — and I kept coming back. That habit of noticing became everything.</p>
+    <div class="story-grid">
+      <article class="reveal"><div class="num">01 · Volunteer</div><h3>Animal Care Station</h3><p>At a local animal care station, I volunteered in daily care routines and general support. There I learned that a small life's wellbeing depends on consistent, everyday attention.</p></article>
+      <article class="reveal"><div class="num">02 · Internship</div><h3>Hospital Internship</h3><p>A hospital internship gave me firsthand exposure to a clinical environment, showing me how structured medical care works in practice.</p></article>
+      <article class="reveal"><div class="num">03 · Advocacy</div><h3>Social Media for Strays</h3><p>I share posts on social media advocating for stray animal protection, hoping to turn individual care into public awareness.</p></article>
+      <article class="reveal"><div class="num">04 · Feeding</div><h3>Neighborhood Stray Cats</h3><p>Feeding stray cats in my neighborhood became a steady routine — small visits, simple food, and the quiet work of helping animals at their most basic welfare.</p></article>
+    </div>
+    <div class="story-why reveal"><h3>Why Medicine</h3><p>These experiences taught me that compassion needs a method. I am drawn to veterinary and biomedical science because it can turn my care for small lives into the knowledge and skill to protect them properly.</p></div>
+  </div>
+</section>
+
+<section class="photography" id="photography">
+  <div class="wrap">
+    <h2 class="section-title reveal">Record</h2>
+    <p class="section-lead reveal">Little Lives Through My Lens</p>
+    <div class="filters reveal" id="filters" role="group" aria-label="Filter photographs">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="street">Street Animals</button>
+      <button class="filter" data-filter="companions">House Cats</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section class="photography travel" id="travel">
+  <div class="wrap">
+    <h2 class="section-title reveal">Travel</h2>
+    <p class="section-lead reveal">A Personal Hobby — Journeys &amp; Places I've Loved</p>
+    <div class="gallery" id="gallery-travel"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <h2 class="section-title">Contact</h2>
+    <p>I would be glad to talk about the small lives I hope to protect.</p>
+    <a class="mail" href="mailto:yangzhuoyi2028@163.com">yangzhuoyi2028@163.com</a>
+  </div>
+</section>
+
+<footer>
+  <p class="closing">Small lives, big care — and this is only the beginning.</p>
+  <p style="margin-top:16px">© <span id="year"></span> 杨卓毅. All photographs are my own.</p>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+  <img id="lbImg" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">›</button>
+</div>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+const PHOTOS=[
+{file:"8ff17728f66f8c623d268a8f26732fff.jpg",group:"street",tag:"Street Animals",cap:"A small life, noticed.",alt:"An animal photographed on the street"},
+{file:"381be048b6ec96732b0d4c0ab83d7fbe.jpg",group:"street",tag:"Street Animals",cap:"Coming back was not enough — I wanted to understand.",alt:"A street animal being fed"},
+{file:"038f3e20d6b36968e48bde12a273f558.jpg",group:"street",tag:"Street Animals",cap:"The quiet patience of a street survivor.",alt:"An animal waiting quietly outdoors"},
+{file:"65e06cb95f2fa327f71a4f9f62396b4c.jpg",group:"street",tag:"Street Animals",cap:"Warm light, small life.",alt:"An animal resting in warm light"},
+{file:"104fe8bbb9ea9d63f04be9618917dd11.jpg",group:"street",tag:"Street Animals",cap:"Every encounter made me care more.",alt:"A small animal at dusk"},
+{file:"9ee94d4a949823842d6d84d9a75aba84.jpg",group:"street",tag:"Street Animals",cap:"Hope, and the medicine that keeps it going.",alt:"A companion animal recovering"},
+{file:"5fb46cb7b263ec7601a72bffcbeb60f7.jpg",group:"companions",tag:"Companions",cap:"The ones waiting at home.",alt:"A companion animal resting"},
+{file:"f965bf835fe665d01a30a6a254adf507.jpg",group:"companions",tag:"Companions",cap:"Rest, trusting and still.",alt:"A companion animal at rest"},
+{file:"863af63cafaec67d6f5957e7f98cb16a.jpg",group:"companions",tag:"Companions",cap:"Small lives, quietly content.",alt:"A companion animal close-up"},
+{file:"86d5a721e28566b5a8a63b7b8dd1393b.jpg",group:"journeys",tag:"Journeys",cap:"City sky, wild neighbors.",alt:"Birds on a wire against the sky"},
+{file:"db7d661cd70e2b68ceac1626d620ea4c.jpg",group:"journeys",tag:"Journeys",cap:"Where the trail leads.",alt:"A landscape along the journey"},
+{file:"c78ecaa77b5353728322dbe6de6b6d2e.jpg",group:"journeys",tag:"Journeys",cap:"Temples and the patience to observe.",alt:"A temple from my travels"},
+{file:"e940dccf050f796b257a328717338cb4.jpg",group:"journeys",tag:"Journeys",cap:"Habitats beyond the city.",alt:"A landscape beyond the city"},
+{file:"4c5f45c4037f8fb4d68ca8e2d6cfa05b.jpg",group:"journeys",tag:"Journeys",cap:"Dusk over a hillside city.",alt:"A hillside city at dusk with light breaking through clouds"},
+{file:"39792a3c069bda9d996cbf77d8d3f9e9.jpg",group:"journeys",tag:"Journeys",cap:"The quiet roads I walk.",alt:"A plane-tree avenue stretching into the distance"},
+{file:"ece9c51c01dde662c31cf2a8f47698e7.jpg",group:"journeys",tag:"Journeys",cap:"Still waters, golden arches.",alt:"The Palace of Fine Arts in San Francisco reflected in its lake"},
+{file:"55675dd3beb984a74fea7d3491021bc3.jpg",group:"journeys",tag:"Journeys",cap:"Open road, mountain air.",alt:"A road through a town with green mountains ahead"},
+{file:"830590206e090bee351c0fd4708d2460.jpg",group:"journeys",tag:"Journeys",cap:"Amber over the city.",alt:"A city at dusk under amber clouds"}
+];
+const TAG_LABEL={street:"Street Animals",companions:"House Cats",journeys:"Journeys"};
+const gallery=document.getElementById("gallery");
+const galleryTravel=document.getElementById("gallery-travel");
+const ANIMAL_PHOTOS=PHOTOS.filter(p=>p.group!=="journeys");
+const TRAVEL_PHOTOS=PHOTOS.filter(p=>p.group==="journeys");
+function makeCard(p){
+  const c=document.createElement("figure");
+  c.className="card";c.dataset.group=p.group;c.dataset.file=p.file;c.tabIndex=0;c.setAttribute("role","button");c.setAttribute("aria-label",p.alt);
+  c.innerHTML='<img src="'+p.file+'" alt="'+p.alt+'" loading="lazy"><span class="tag">'+TAG_LABEL[p.group]+'</span><figcaption class="cap">'+p.cap+'</figcaption>';
+  return c;
+}
+ANIMAL_PHOTOS.forEach(p=>gallery.appendChild(makeCard(p)));
+TRAVEL_PHOTOS.forEach(p=>galleryTravel.appendChild(makeCard(p)));
+const filters=document.getElementById("filters");
+filters.addEventListener("click",e=>{
+  const b=e.target.closest(".filter");if(!b)return;
+  filters.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+  const f=b.dataset.filter;
+  gallery.querySelectorAll(".card").forEach(c=>c.classList.toggle("hidden",f!=="all"&&c.dataset.group!==f));
+});
+const lightbox=document.getElementById("lightbox"),lbImg=document.getElementById("lbImg"),lbCap=document.getElementById("lbCap");
+let lbList=ANIMAL_PHOTOS,lbIndex=0,lastCard=null;
+function openLightbox(list,index,card){lbList=list;lbIndex=index;lastCard=card;updateLightbox();lightbox.classList.add("open");document.body.style.overflow="hidden";lbClose.focus()}
+function updateLightbox(){const p=lbList[lbIndex];lbImg.src=p.file;lbImg.alt=p.alt;lbCap.textContent=p.cap+" · "+TAG_LABEL[p.group]}
+function closeLightbox(){lightbox.classList.remove("open");document.body.style.overflow="";if(lastCard)lastCard.focus();lastCard=null}
+const lbClose=document.getElementById("lbClose"),lbPrev=document.getElementById("lbPrev"),lbNext=document.getElementById("lbNext");
+function idxOfCard(list,card){return list.findIndex(p=>p.file===card.dataset.file)}
+lbClose.addEventListener("click",closeLightbox);
+lbPrev.addEventListener("click",()=>{lbIndex=(lbIndex-1+lbList.length)%lbList.length;updateLightbox()});
+lbNext.addEventListener("click",()=>{lbIndex=(lbIndex+1)%lbList.length;updateLightbox()});
+gallery.addEventListener("click",e=>{const card=e.target.closest(".card");if(!card)return;openLightbox(ANIMAL_PHOTOS,idxOfCard(ANIMAL_PHOTOS,card),card)});
+gallery.addEventListener("keydown",e=>{const card=e.target.closest(".card");if(!card)return;if(e.key==="Enter"||e.key===" "){e.preventDefault();openLightbox(ANIMAL_PHOTOS,idxOfCard(ANIMAL_PHOTOS,card),card)}});
+galleryTravel.addEventListener("click",e=>{const card=e.target.closest(".card");if(!card)return;openLightbox(TRAVEL_PHOTOS,idxOfCard(TRAVEL_PHOTOS,card),card)});
+galleryTravel.addEventListener("keydown",e=>{const card=e.target.closest(".card");if(!card)return;if(e.key==="Enter"||e.key===" "){e.preventDefault();openLightbox(TRAVEL_PHOTOS,idxOfCard(TRAVEL_PHOTOS,card),card)}});
+document.addEventListener("keydown",e=>{
+  if(!lightbox.classList.contains("open"))return;
+  if(e.key==="Escape")closeLightbox();
+  else if(e.key==="ArrowLeft"){lbIndex=(lbIndex-1+lbList.length)%lbList.length;updateLightbox()}
+  else if(e.key==="ArrowRight"){lbIndex=(lbIndex+1)%lbList.length;updateLightbox()}
+});
+const header=document.getElementById("siteHeader"),toTop=document.getElementById("toTop"),nav=document.getElementById("nav"),navToggle=document.getElementById("navToggle");
+navToggle.addEventListener("click",()=>{const o=nav.classList.toggle("open");navToggle.setAttribute("aria-expanded",o)});
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");navToggle.setAttribute("aria-expanded","false")}));
+const navLinks=document.querySelectorAll(".nav-link");
+const spy=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){navLinks.forEach(l=>l.classList.toggle("active",l.getAttribute("href")==="#"+en.target.id))}})},{rootMargin:"-45% 0px -50% 0px"});
+["story","photography","travel","contact"].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el)});
+window.addEventListener("scroll",()=>{const y=window.scrollY;header.classList.toggle("scrolled",y>60);toTop.classList.toggle("visible",y>600)},{passive:true});
+toTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+const ro=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("visible");ro.unobserve(en.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>ro.observe(el));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
